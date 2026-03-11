@@ -2,6 +2,28 @@
 
 Welcome to your Spec-Kit project! This template provides a spec-driven development workflow powered by AI agents.
 
+## Setup (Manual Install)
+
+If your environment doesn't support `uv` or the Specify CLI (e.g., restricted Windows laptops), you can set up Spec-Kit manually:
+
+1. **Copy folders** — Copy `.github/` and `.specify/` from this repo into your target project's root directory.
+2. **Apply VS Code settings** — Merge the contents of `.vscode/settings.json` into your target project's `.vscode/settings.json`:
+   ```jsonc
+   {
+     "chat.promptFilesRecommendations": {
+       "speckit.constitution": true,
+       "speckit.specify": true,
+       "speckit.plan": true,
+       "speckit.tasks": true,
+       "speckit.implement": true
+     },
+     "chat.tools.terminal.autoApprove": {
+       ".specify/scripts/bash/": true,
+       ".specify/scripts/powershell/": true
+     }
+   }
+   ```
+
 ## Agent Folder Security
 
 > Some agents may store credentials, auth tokens, or other identifying and private artifacts in the agent folder within your project.
